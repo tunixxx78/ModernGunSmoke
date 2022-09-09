@@ -186,7 +186,8 @@ MonoBehaviour:
   plr: {fileID: 1035817407}
   spawnpoints:
   - {fileID: 539115738}
-  roadPrefab: []
+  roadPrefab:
+  - {fileID: 5090256848768924434, guid: 05ebea432cace4ecf913cd2153da7704, type: 3}
 --- !u!4 &822307398
 Transform:
   m_ObjectHideFlags: 0
@@ -236,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plrRB: {fileID: 0}
-  moveSpeed: 50
+  moveSpeed: 20
 --- !u!65 &1035817409
 BoxCollider:
   m_ObjectHideFlags: 0
