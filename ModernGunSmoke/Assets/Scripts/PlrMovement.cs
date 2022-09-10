@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTest : MonoBehaviour
+public class PlrMovement : MonoBehaviour
 {
     GameManager gameManager;
     [SerializeField] Rigidbody plrRB;
@@ -26,5 +26,10 @@ public class PlayerTest : MonoBehaviour
             Debug.Log("OSUMAA TULEE");
             gameManager.SpawnNextBlock();
         }
+    }
+
+    private void movement()
+    {
+
     }
 }
