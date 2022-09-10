@@ -5,31 +5,51 @@ using UnityEngine;
 public class PlrMovement : MonoBehaviour
 {
     GameManager gameManager;
-    [SerializeField] Rigidbody plrRB;
-    [SerializeField] float moveSpeed = 10f;
+    Rigidbody plrRb;
+    [SerializeField] float plrSpeed = 20f;
+    Vector3 direction;
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
-        plrRB = GetComponent<Rigidbody>();
+        plrRb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        plrRB.AddForce(Vector3.forward * moveSpeed * Time.deltaTime, ForceMode.Impulse);
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        direction = new Vector3(horizontal, 0, vertical).normalized;
+
+        if(direction.magnitude >= 0.1f)
+        {
+            movement();
+        }
+
     }
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("NextBlockCollider"))
         {
+            Destroy(collider.gameObject);
             Debug.Log("OSUMAA TULEE");
             gameManager.SpawnNextBlock();
+            
+        }
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Mover")
+        {
+            Debug.Log("Osuma moveriin!");
         }
     }
 
     private void movement()
     {
-
+        plrRb.AddForce(direction * plrSpeed * Time.deltaTime, ForceMode.Impulse);
     }
 }
