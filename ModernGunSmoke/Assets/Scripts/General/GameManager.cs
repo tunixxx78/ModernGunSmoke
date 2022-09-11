@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    //[SerializeField] GameObject plr;
-    //[SerializeField] Transform[] spawnpoints;
+
     [SerializeField] GameObject[] roadPrefab;
     Transform sPPos;
     Vector3 sP = new Vector3(0, 0, 0);
     int spawnIndex = 0;
 
+    [SerializeField] GameObject enemyPrefab;
+
+    public int plrPoints;
+    [SerializeField] TMP_Text playerPoints;
+
     public List<GameObject> roadBlocks = new List<GameObject>();
     public List<Vector3> spawnPositions = new List<Vector3>();
+
+    private void Start()
+    {
+        EnemySpawnTest();
+    }
+
+    private void Update()
+    {
+        playerPoints.text = plrPoints.ToString();
+    }
 
 
     public void SpawnNextBlock()
@@ -27,5 +42,10 @@ public class GameManager : MonoBehaviour
 
         spawnIndex++;
 
+    }
+
+    private void EnemySpawnTest()
+    {
+        Instantiate(enemyPrefab, new Vector3(0, 1.5f, 0), Quaternion.identity);
     }
 }

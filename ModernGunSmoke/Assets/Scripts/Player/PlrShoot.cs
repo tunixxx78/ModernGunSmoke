@@ -7,6 +7,7 @@ public class PlrShoot : MonoBehaviour
     [SerializeField] Transform bulletSpawnPointright, bulletSpawnPointLeft;
     [SerializeField] GameObject[] bullets;
     [SerializeField] Camera main;
+    [SerializeField] float shootDelay = 1;
     public bool canShoot = true;
     public int currentBullet = 0;
     public Vector3 direction;
@@ -20,6 +21,9 @@ public class PlrShoot : MonoBehaviour
             if (canShoot)
             {
                 GetTargetPoint();
+                canShoot = false;
+
+                StartCoroutine(ShootDelay());
             }
         }
     }
@@ -50,5 +54,12 @@ public class PlrShoot : MonoBehaviour
 
         Destroy(leftBulletInstance, 5f);
         Destroy(rightBulletInstance, 5f);
+    }
+
+    IEnumerator ShootDelay()
+    {
+        yield return new WaitForSeconds(shootDelay);
+
+        canShoot = true;
     }
 }

@@ -9,6 +9,7 @@ public class PlrMovement : MonoBehaviour
     [SerializeField] float plrSpeed = 20f, plrBaseSpeed = 10f;
     Vector3 direction;
 
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -48,6 +49,10 @@ public class PlrMovement : MonoBehaviour
         if (collision.collider.tag == "Mover")
         {
             Debug.Log("Osuma moveriin!");
+        }
+        if(collision.collider.tag == "EnemyBullet")
+        {
+            Destroy(this.gameObject);
         }
     }
 
