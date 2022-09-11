@@ -6,7 +6,7 @@ public class PlrMovement : MonoBehaviour
 {
     GameManager gameManager;
     Rigidbody plrRb;
-    [SerializeField] float plrSpeed = 20f;
+    [SerializeField] float plrSpeed = 20f, plrBaseSpeed = 10f;
     Vector3 direction;
 
     private void Awake()
@@ -17,6 +17,8 @@ public class PlrMovement : MonoBehaviour
 
     private void Update()
     {
+        plrRb.AddForce(Vector3.forward * plrBaseSpeed * Time.deltaTime);
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         direction = new Vector3(horizontal, 0, vertical).normalized;
