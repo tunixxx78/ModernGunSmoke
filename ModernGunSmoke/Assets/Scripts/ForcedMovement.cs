@@ -14,6 +14,6 @@ public class ForcedMovement : MonoBehaviour
 
     private void Update()
     {
-        mover.AddForce(Vector3.forward * Speed * Time.deltaTime, ForceMode.Impulse);
+        transform.Translate(Vector3.forward * Speed * Time.deltaTime);
     }
 }

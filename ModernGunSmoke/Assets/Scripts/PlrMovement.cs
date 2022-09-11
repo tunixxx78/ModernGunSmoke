@@ -17,7 +17,8 @@ public class PlrMovement : MonoBehaviour
 
     private void Update()
     {
-        plrRb.AddForce(Vector3.forward * plrBaseSpeed * Time.deltaTime);
+        //plrRb.AddForce(Vector3.forward * plrBaseSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * plrBaseSpeed * Time.deltaTime);
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
