@@ -8,12 +8,18 @@ public class PlrMovement : MonoBehaviour
     Rigidbody plrRb;
     [SerializeField] float plrSpeed = 20f, plrBaseSpeed = 10f;
     Vector3 direction;
+    [SerializeField] int health = 10;
 
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         plrRb = GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        gameManager.plrHealth = health;
     }
 
     private void Update()
@@ -52,7 +58,13 @@ public class PlrMovement : MonoBehaviour
         }
         if(collision.collider.tag == "EnemyBullet")
         {
-            Destroy(this.gameObject);
+            health--;
+            gameManager.plrHealth = health;
+            if(health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+            
         }
     }
 
