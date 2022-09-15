@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlrMovement : MonoBehaviour
 {
     GameManager gameManager;
+    PlrShoot plrShoot;
     Rigidbody plrRb;
     [SerializeField] float plrSpeed = 20f, plrBaseSpeed = 10f;
     Vector3 direction;
@@ -15,6 +16,7 @@ public class PlrMovement : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         plrRb = GetComponent<Rigidbody>();
+        plrShoot = GetComponent<PlrShoot>();
     }
 
     private void Start()
@@ -47,7 +49,11 @@ public class PlrMovement : MonoBehaviour
             gameManager.SpawnNextBlock();
             
         }
-        
+        if (collider.CompareTag("AmmoCollectible"))
+        {
+            gameManager.plrAmmoCount = collider.GetComponent<AmmoCollectible>().AmmoAmount;
+            GetComponent<PlrShoot>().ammoCount = collider.GetComponent<AmmoCollectible>().AmmoAmount;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -66,6 +72,7 @@ public class PlrMovement : MonoBehaviour
             }
             
         }
+      
     }
 
     private void movement()

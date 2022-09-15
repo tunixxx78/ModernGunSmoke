@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject enemyPrefab;
 
-    public int plrPoints, plrHealth;
+    public int plrPoints, plrHealth, plrAmmoCount = 0;
 
-    [SerializeField] TMP_Text playerPointsText, highScoreText, playerHealthText;
+    [SerializeField] TMP_Text playerPointsText, highScoreText, playerHealthText, ammoCountText;
 
     public List<GameObject> roadBlocks = new List<GameObject>();
     public List<Vector3> spawnPositions = new List<Vector3>();
@@ -24,12 +24,14 @@ public class GameManager : MonoBehaviour
     {
         EnemySpawnTest();
         playerHealthText.text = plrHealth.ToString();
+        ammoCountText.text = plrAmmoCount.ToString();
     }
 
     private void Update()
     {
         playerPointsText.text = plrPoints.ToString();
         playerHealthText.text = plrHealth.ToString();
+        ammoCountText.text = plrAmmoCount.ToString();
     }
 
 

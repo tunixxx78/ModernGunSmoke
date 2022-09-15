@@ -9,23 +9,31 @@ public class PlrShoot : MonoBehaviour
     [SerializeField] Camera main;
     [SerializeField] float shootDelay = 1;
     public bool canShoot = true;
-    public int currentBullet = 0;
+    public int currentBullet = 0, ammoCount = 0;
     public Vector3 direction;
+    GameManager gameManager;
 
-    
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (canShoot)
+            if (canShoot && ammoCount >= 1)
             {
                 GetTargetPoint();
+                ammoCount--;
                 canShoot = false;
+                gameManager.plrAmmoCount = ammoCount;
 
                 StartCoroutine(ShootDelay());
             }
         }
+
+        
     }
 
     private void GetTargetPoint()
