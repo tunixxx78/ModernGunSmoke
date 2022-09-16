@@ -29,6 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6605929266430269874}
+  - {fileID: 2575947318279838580}
   m_Father: {fileID: 5415064762317128315}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,7 +47,7 @@ GameObject:
   - component: {fileID: 5415064762317128318}
   - component: {fileID: 5415064762317128319}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +60,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5415064762317128304}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.53, z: -58.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -68,7 +69,7 @@ Transform:
   - {fileID: 5415064763212993688}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5415064762317128316
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -341,6 +342,68 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &2571194222785623774
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8468006423724878079}
+    m_Modifications:
+    - target: {fileID: 1830787700065114, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_Name
+      value: Character_Mexican_Male_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+--- !u!4 &2575947318279838580 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4835609115684266, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+  m_PrefabInstance: {fileID: 2571194222785623774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6610428098000664744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -351,6 +414,10 @@ PrefabInstance:
     - target: {fileID: 1942289980213182, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
       propertyPath: m_Name
       value: Character_Badguy_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942289980213182, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4517892917420314, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
       propertyPath: m_RootOrder

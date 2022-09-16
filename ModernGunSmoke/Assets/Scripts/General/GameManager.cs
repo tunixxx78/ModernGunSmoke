@@ -20,11 +20,14 @@ public class GameManager : MonoBehaviour
     public List<GameObject> roadBlocks = new List<GameObject>();
     public List<Vector3> spawnPositions = new List<Vector3>();
 
+    [SerializeField] HealthBar plrHealthBar;
+
     private void Start()
     {
         EnemySpawnTest();
         playerHealthText.text = plrHealth.ToString();
         ammoCountText.text = plrAmmoCount.ToString();
+        plrHealthBar.SetMaxHealth(plrHealth);
     }
 
     private void Update()
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
         playerPointsText.text = plrPoints.ToString();
         playerHealthText.text = plrHealth.ToString();
         ammoCountText.text = plrAmmoCount.ToString();
+        plrHealthBar.SetHealth(plrHealth);
     }
 
 
@@ -51,6 +55,6 @@ public class GameManager : MonoBehaviour
 
     private void EnemySpawnTest()
     {
-        Instantiate(enemyPrefab, new Vector3(0, 1.5f, 0), Quaternion.identity);
+        Instantiate(enemyPrefab, new Vector3(0, 1.5f, 0), Quaternion.Euler(0, -180, 0));
     }
 }

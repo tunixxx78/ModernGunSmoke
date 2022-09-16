@@ -17,11 +17,13 @@ public class PlrMovement : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         plrRb = GetComponent<Rigidbody>();
         plrShoot = GetComponent<PlrShoot>();
+
+        gameManager.plrHealth = health;
     }
 
     private void Start()
     {
-        gameManager.plrHealth = health;
+        
     }
 
     private void Update()
@@ -51,8 +53,8 @@ public class PlrMovement : MonoBehaviour
         }
         if (collider.CompareTag("AmmoCollectible"))
         {
-            gameManager.plrAmmoCount = collider.GetComponent<AmmoCollectible>().AmmoAmount;
-            GetComponent<PlrShoot>().ammoCount = collider.GetComponent<AmmoCollectible>().AmmoAmount;
+            gameManager.plrAmmoCount = gameManager.plrAmmoCount + collider.GetComponent<AmmoCollectible>().AmmoAmount;
+            GetComponent<PlrShoot>().ammoCount = GetComponent<PlrShoot>().ammoCount + collider.GetComponent<AmmoCollectible>().AmmoAmount;
         }
     }
 
