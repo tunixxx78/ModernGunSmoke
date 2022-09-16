@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     [SerializeField] GameObject[] roadPrefab;
+    [SerializeField] GameObject FinalRoadBlok;
     Transform sPPos;
     Vector3 sP = new Vector3(0, 0, 0);
     int spawnIndex = 0;
@@ -22,12 +23,22 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] HealthBar plrHealthBar;
 
+    public bool forcingMovement;
+    [SerializeField] int wantedAmountOfBloks, stopingDelay;
+    PlrMovement plrMovement;
+
+    private void Awake()
+    {
+        plrMovement = FindObjectOfType<PlrMovement>();
+    }
+
     private void Start()
     {
         EnemySpawnTest();
         playerHealthText.text = plrHealth.ToString();
         ammoCountText.text = plrAmmoCount.ToString();
         plrHealthBar.SetMaxHealth(plrHealth);
+        forcingMovement = true;
     }
 
     private void Update()
@@ -36,6 +47,11 @@ public class GameManager : MonoBehaviour
         playerHealthText.text = plrHealth.ToString();
         ammoCountText.text = plrAmmoCount.ToString();
         plrHealthBar.SetHealth(plrHealth);
+
+        if(roadBlocks.Count >= wantedAmountOfBloks)
+        {
+            StartCoroutine(StopForcedMovement());
+        }
     }
 
 
@@ -43,9 +59,20 @@ public class GameManager : MonoBehaviour
     {
         int randomRoadBlock = Random.Range(0, roadPrefab.Length);
 
-        var roadInstance = Instantiate(roadPrefab[randomRoadBlock], spawnPositions[spawnIndex], Quaternion.identity);
-        roadBlocks.Add(roadInstance);
-        sP = new Vector3(sP.x, sP.y, sP.z + 200);
+        if(roadBlocks.Count >= wantedAmountOfBloks - 1)
+        {
+            var roadInstance = Instantiate(FinalRoadBlok, spawnPositions[spawnIndex], Quaternion.identity);
+            roadBlocks.Add(roadInstance);
+            sP = new Vector3(sP.x, sP.y, sP.z + 200);
+        }
+        else
+        {
+            var roadInstance = Instantiate(roadPrefab[randomRoadBlock], spawnPositions[spawnIndex], Quaternion.identity);
+            roadBlocks.Add(roadInstance);
+            sP = new Vector3(sP.x, sP.y, sP.z + 200);
+        }
+
+        
 
         spawnPositions.Add(sP);
 
@@ -56,5 +83,13 @@ public class GameManager : MonoBehaviour
     private void EnemySpawnTest()
     {
         Instantiate(enemyPrefab, new Vector3(0, 1.5f, 0), Quaternion.Euler(0, -180, 0));
+    }
+
+    private IEnumerator StopForcedMovement()
+    {
+        yield return new WaitForSeconds(stopingDelay);
+
+        forcingMovement = false;
+        plrMovement.onTheWay = false;
     }
 }

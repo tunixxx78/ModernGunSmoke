@@ -34,8 +34,8 @@ public class EnemyBase : MonoBehaviour
 
     private void Start()
     {
-        GameObject enemyBulletInstance =  Instantiate(enemyBulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-        Destroy(enemyBulletInstance, 10f);
+        //GameObject enemyBulletInstance =  Instantiate(enemyBulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+        //Destroy(enemyBulletInstance, 10f);
 
         StartCoroutine(FOVRoutine());
         //StartCoroutine(ShootingDelay());

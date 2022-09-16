@@ -10,6 +10,7 @@ public class PlrMovement : MonoBehaviour
     [SerializeField] float plrSpeed = 20f, plrBaseSpeed = 10f;
     Vector3 direction;
     [SerializeField] int health = 10;
+    public bool onTheWay;
 
 
     private void Awake()
@@ -23,13 +24,16 @@ public class PlrMovement : MonoBehaviour
 
     private void Start()
     {
-        
+        onTheWay = true;
     }
 
     private void Update()
     {
-        //plrRb.AddForce(Vector3.forward * plrBaseSpeed * Time.deltaTime);
-        transform.Translate(Vector3.forward * plrBaseSpeed * Time.deltaTime);
+        if (onTheWay)
+        {
+            transform.Translate(Vector3.forward * plrBaseSpeed * Time.deltaTime);
+        }
+        
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
