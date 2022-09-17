@@ -14,8 +14,8 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] float angle;
     [SerializeField] LayerMask player;
     [SerializeField] LayerMask obstacle;
-    [SerializeField]bool canSeePlr, canShoot = true, isThisBoss;
-
+    [SerializeField]bool canShoot = true, isThisBoss;
+    public bool canSeePlr;
 
 
     GameManager gameManager;
