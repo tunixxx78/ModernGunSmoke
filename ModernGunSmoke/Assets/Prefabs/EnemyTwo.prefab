@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plr: {fileID: 0}
+  enemyHealth: 0
+  enemyHealthBar: {fileID: 0}
   bulletSpawnPoint: {fileID: 5415064762626143159}
   enemyBulletPrefab: {fileID: 410325757967700097, guid: 8717eeb712f534d13904cb8d7ef946f0, type: 3}
   delay: 2
@@ -158,8 +160,10 @@ MonoBehaviour:
   obstacle:
     serializedVersion: 2
     m_Bits: 512
-  canSeePlr: 0
   canShoot: 1
+  isThisBoss: 0
+  isAlive: 0
+  canSeePlr: 0
 --- !u!1 &5415064762626143144
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +401,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95513085099715932, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e0fc6235ac4794cb788d6a8304cda01b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c169b51be4ef99489f073426f4bf68c, type: 3}
 --- !u!4 &2575947318279838580 stripped

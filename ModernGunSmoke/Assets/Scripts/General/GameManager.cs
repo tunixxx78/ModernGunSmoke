@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -51,6 +52,15 @@ public class GameManager : MonoBehaviour
         if(roadBlocks.Count >= wantedAmountOfBloks)
         {
             StartCoroutine(StopForcedMovement());
+        }
+
+        //ONLY FOR DEV USE!
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            PlayerPrefs.SetInt("PLRPoints", plrPoints);
+
+            SceneManager.LoadScene(3);
         }
     }
 

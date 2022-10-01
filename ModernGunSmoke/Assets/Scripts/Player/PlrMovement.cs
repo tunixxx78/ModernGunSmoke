@@ -12,6 +12,8 @@ public class PlrMovement : MonoBehaviour
     [SerializeField] int health = 10;
     public bool onTheWay;
 
+    Animator plrAnimator;
+
 
     private void Awake()
     {
@@ -20,6 +22,8 @@ public class PlrMovement : MonoBehaviour
         plrShoot = GetComponent<PlrShoot>();
 
         gameManager.plrHealth = health;
+
+        plrAnimator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -32,6 +36,11 @@ public class PlrMovement : MonoBehaviour
         if (onTheWay)
         {
             transform.Translate(Vector3.forward * plrBaseSpeed * Time.deltaTime);
+            plrAnimator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            plrAnimator.SetBool("IsRunning", false);
         }
         
 
@@ -42,6 +51,12 @@ public class PlrMovement : MonoBehaviour
         if(direction.magnitude >= 0.1f)
         {
             movement();
+        }
+        else { if (onTheWay == false) { plrAnimator.SetBool("IsRunning", false); }  }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            plrAnimator.SetTrigger("Jump");
         }
 
     }
@@ -84,5 +99,10 @@ public class PlrMovement : MonoBehaviour
     private void movement()
     {
         plrRb.AddForce(direction * plrSpeed * Time.deltaTime, ForceMode.Impulse);
+        if(onTheWay == false)
+        {
+            plrAnimator.SetBool("IsRunning", true);
+        }
+        
     }
 }
