@@ -14,11 +14,13 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] float angle;
     [SerializeField] LayerMask player;
     [SerializeField] LayerMask obstacle;
-    [SerializeField]bool canShoot = true, isThisBoss;
+    [SerializeField]bool canShoot = true, isThisBoss, isAlive;
     public bool canSeePlr;
 
 
     GameManager gameManager;
+
+    public Animator enemyAnimator;
 
     private void Awake()
     {
@@ -28,7 +30,10 @@ public class EnemyBase : MonoBehaviour
         {
             enemyHealthBar.SetMaxHealth(enemyHealth);
         }
-        
+
+        enemyAnimator = GetComponentInChildren<Animator>();
+
+        isAlive = true;
         
     }
 
@@ -63,7 +68,11 @@ public class EnemyBase : MonoBehaviour
         canShoot = true;
 
         //ShootingEnemy();
-        FieldOfViewCheck();
+        if (isAlive)
+        {
+            FieldOfViewCheck();
+        }
+        
     }
 
     IEnumerator FOVRoutine()
@@ -95,7 +104,7 @@ public class EnemyBase : MonoBehaviour
 
                 if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacle))
                 {
-                    if (canShoot)
+                    if (canShoot && isAlive)
                     {
                         canSeePlr = true;
                         GameObject enemyBulletInstance = Instantiate(enemyBulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
@@ -137,9 +146,17 @@ public class EnemyBase : MonoBehaviour
             
             if (enemyHealth <= 0)
             {
-                Destroy(this.gameObject);
+                isAlive = false;
+
+                enemyAnimator.SetTrigger("Death");
+
+                Destroy(this.gameObject, 3f);
             }
             
         }
+    }
+    public void getAnimatorActions()
+    {
+        enemyAnimator.SetTrigger("Jump");
     }
 }

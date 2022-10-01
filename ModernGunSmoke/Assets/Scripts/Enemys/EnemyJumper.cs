@@ -39,6 +39,7 @@ public class EnemyJumper : MonoBehaviour
     {
         if (isGrounded)
         {
+            GetComponent<EnemyBase>().getAnimatorActions();
             enemyRigidbody.AddForce(Vector3.up * jumpForce * Time.deltaTime, ForceMode.Impulse);
             enemyRigidbody.AddForce(Vector3.right * 30 * Time.deltaTime, ForceMode.Impulse);
             enemyRigidbody.AddForce(Vector3.forward * 30 * Time.deltaTime, ForceMode.Impulse);
