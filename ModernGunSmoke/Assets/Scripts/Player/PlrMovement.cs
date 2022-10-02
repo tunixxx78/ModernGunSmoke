@@ -13,6 +13,7 @@ public class PlrMovement : MonoBehaviour
     public bool onTheWay;
 
     Animator plrAnimator;
+    [SerializeField] GameObject plrAvatar;
 
 
     private void Awake()
@@ -52,7 +53,19 @@ public class PlrMovement : MonoBehaviour
         {
             movement();
         }
-        else { if (onTheWay == false) { plrAnimator.SetBool("IsRunning", false); }  }
+        else { if (onTheWay == false) { plrAnimator.SetBool("IsRunning", false); } }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            plrAvatar.transform.localRotation = Quaternion.Euler(0, -20, 0);
+        }
+        //else { plrAvatar.transform.localRotation = Quaternion.Euler(0, 15, 0); }
+
+        else if (Input.GetKey(KeyCode.D))
+        {
+            plrAvatar.transform.localRotation = Quaternion.Euler(0, 50, 0);
+        }
+        else { plrAvatar.transform.localRotation = Quaternion.Euler(0, 15, 0); }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -89,6 +102,7 @@ public class PlrMovement : MonoBehaviour
             gameManager.plrHealth = health;
             if(health <= 0)
             {
+                gameManager.ShowGameOverPanel();
                 Destroy(this.gameObject);
             }
             

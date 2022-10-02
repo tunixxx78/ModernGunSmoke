@@ -148,9 +148,17 @@ public class EnemyBase : MonoBehaviour
             {
                 isAlive = false;
 
+                GetComponent<Rigidbody>().isKinematic = true;
+
                 enemyAnimator.SetTrigger("Death");
 
                 Destroy(this.gameObject, 3f);
+
+                if (isThisBoss)
+                {
+                    gameManager.ShowYouWonPanel();
+
+                }
             }
             
         }

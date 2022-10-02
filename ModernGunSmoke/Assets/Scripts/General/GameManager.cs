@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
 
     [SerializeField] GameObject[] roadPrefab;
-    [SerializeField] GameObject FinalRoadBlok;
+    [SerializeField] GameObject FinalRoadBlok, pausePanel, gameOverPanel, youWonPanel;
     Transform sPPos;
     Vector3 sP = new Vector3(0, 0, 0);
     int spawnIndex = 0;
@@ -54,14 +54,21 @@ public class GameManager : MonoBehaviour
             StartCoroutine(StopForcedMovement());
         }
 
-        //ONLY FOR DEV USE!
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            pausePanel.SetActive(true);
+            Time.timeScale = 0;
+        }
 
+        //ONLY FOR DEV USE!
+        /*
         if (Input.GetKeyDown(KeyCode.Q))
         {
             PlayerPrefs.SetInt("PLRPoints", plrPoints);
 
             SceneManager.LoadScene(3);
         }
+        */
     }
 
 
@@ -101,5 +108,17 @@ public class GameManager : MonoBehaviour
 
         forcingMovement = false;
         plrMovement.onTheWay = false;
+    }
+
+    public void ShowGameOverPanel()
+    {
+        gameOverPanel.SetActive(true);
+        PlayerPrefs.SetInt("PLRPoints", plrPoints);
+    }
+    public void ShowYouWonPanel()
+    {
+        youWonPanel.SetActive(true);
+        PlayerPrefs.SetInt("PLRPoints", plrPoints);
+
     }
 }
