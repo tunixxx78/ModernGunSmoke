@@ -4,28 +4,39 @@ using UnityEngine;
 
 public class PlrShoot : MonoBehaviour
 {
-    [SerializeField] Transform bulletSpawnPointright, bulletSpawnPointLeft;
+    [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] GameObject[] bullets;
     [SerializeField] Camera main;
     [SerializeField] float shootDelay = 1;
     public bool canShoot = true;
-    public int currentBullet = 0;
+    public int currentBullet = 0, ammoCount = 0;
     public Vector3 direction;
+    GameManager gameManager;
+    SFXHandler sfxHandler;
 
-    
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        sfxHandler = FindObjectOfType<SFXHandler>();
+    }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (canShoot)
+            if (canShoot && ammoCount >= 1)
             {
                 GetTargetPoint();
+                ammoCount--;
                 canShoot = false;
+                gameManager.plrAmmoCount = ammoCount;
+                sfxHandler.shotgun.Play();
 
                 StartCoroutine(ShootDelay());
             }
         }
+
+        
     }
 
     private void GetTargetPoint()
@@ -42,18 +53,16 @@ public class PlrShoot : MonoBehaviour
             targetpoint = ray.GetPoint(75);
         }
 
-        direction = targetpoint - bulletSpawnPointLeft.position;
+        direction = targetpoint - bulletSpawnPoint.position;
 
         Shoot();
     }
 
     public void Shoot()
     {    
-        var leftBulletInstance = Instantiate(bullets[currentBullet], bulletSpawnPointLeft.position, Quaternion.identity);
-        var rightBulletInstance = Instantiate(bullets[currentBullet], bulletSpawnPointright.position, Quaternion.identity);
+        var BulletInstance = Instantiate(bullets[currentBullet], bulletSpawnPoint.position, Quaternion.identity);
 
-        Destroy(leftBulletInstance, 5f);
-        Destroy(rightBulletInstance, 5f);
+        Destroy(BulletInstance, 5f);
     }
 
     IEnumerator ShootDelay()

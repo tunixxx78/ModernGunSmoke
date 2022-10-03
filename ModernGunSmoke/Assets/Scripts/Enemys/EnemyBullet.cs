@@ -23,7 +23,6 @@ public class EnemyBullet : MonoBehaviour
 
     private void Update()
     {
-        //plrPos = plr.transform.position;
         bulletRb.AddForce(direction * bulletSpeed * Time.deltaTime, ForceMode.Impulse);
     }
 }
