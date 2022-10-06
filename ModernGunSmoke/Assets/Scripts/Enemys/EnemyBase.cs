@@ -22,6 +22,8 @@ public class EnemyBase : MonoBehaviour
 
     public Animator enemyAnimator;
 
+    SFXHandler sFXHandler;
+
     private void Awake()
     {
         plr = GameObject.Find("Player");
@@ -34,6 +36,8 @@ public class EnemyBase : MonoBehaviour
         enemyAnimator = GetComponentInChildren<Animator>();
 
         isAlive = true;
+
+        sFXHandler = FindObjectOfType<SFXHandler>();
         
     }
 
@@ -143,6 +147,11 @@ public class EnemyBase : MonoBehaviour
             {
                 enemyHealthBar.SetHealth(enemyHealth);
             }
+
+            if(enemyHealth > 0)
+            {
+                sFXHandler.getHit.Play();
+            }
             
             if (enemyHealth <= 0)
             {
@@ -151,6 +160,8 @@ public class EnemyBase : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = true;
 
                 enemyAnimator.SetTrigger("Death");
+                sFXHandler.dying.Play();
+                
 
                 Destroy(this.gameObject, 3f);
 
