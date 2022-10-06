@@ -29,6 +29,9 @@ public class HighscoreHandler : MonoBehaviour
         {
             onHighscoreListChanged.Invoke(highscoreList);
         }
+
+        int bestPoints = highscoreList[0].points;
+        PlayerPrefs.SetInt("BestScore", bestPoints);
     }
 
     private void SaveHighscore()

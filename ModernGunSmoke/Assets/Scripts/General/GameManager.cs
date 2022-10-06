@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject enemyPrefab;
 
-    public int plrPoints, plrHealth, plrAmmoCount = 0;
+    public int plrPoints, plrHealth, plrAmmoCount = 5, currentHighScore;
 
     [SerializeField] TMP_Text playerPointsText, highScoreText, playerHealthText, ammoCountText;
 
@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public List<Vector3> spawnPositions = new List<Vector3>();
 
     [SerializeField] HealthBar plrHealthBar;
+    public AmmoBar plrAmmoBar;
 
     public bool forcingMovement;
     [SerializeField] int wantedAmountOfBloks, stopingDelay;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         plrMovement = FindObjectOfType<PlrMovement>();
+        highScoreText.text = "500000";
     }
 
     private void Start()
@@ -39,7 +41,11 @@ public class GameManager : MonoBehaviour
         playerHealthText.text = plrHealth.ToString();
         ammoCountText.text = plrAmmoCount.ToString();
         plrHealthBar.SetMaxHealth(plrHealth);
+        plrAmmoBar.SetMaxAmmo(plrAmmoCount);
         forcingMovement = true;
+
+        int bestScore = PlayerPrefs.GetInt("BestScore");
+        highScoreText.text = bestScore.ToString();
     }
 
     private void Update()
@@ -48,6 +54,7 @@ public class GameManager : MonoBehaviour
         playerHealthText.text = plrHealth.ToString();
         ammoCountText.text = plrAmmoCount.ToString();
         plrHealthBar.SetHealth(plrHealth);
+        plrAmmoBar.SetAmmo(plrAmmoCount);
 
         if(roadBlocks.Count >= wantedAmountOfBloks)
         {

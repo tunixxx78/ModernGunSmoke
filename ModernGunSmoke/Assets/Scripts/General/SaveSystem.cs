@@ -10,7 +10,7 @@ public class SaveSystem : MonoBehaviour
 {
     public static SaveSystem savingInstance;
 
-    public bool continueGame = false;
+    public bool levelOneDone, levelTwoDone, levelThreeDone, levelFourDone, levelFiveDone;
 
 
     private void Awake()
@@ -40,10 +40,14 @@ public class SaveSystem : MonoBehaviour
     public void SaveData()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/gamedataa.dat");
+        FileStream file = File.Create(Application.persistentDataPath + "/gamedataaa.dat");
         GameData data = new GameData();
 
-        //data.continueGame = continueGame;
+        data.levelOneDone = levelOneDone;
+        data.levelTwoDone = levelTwoDone;
+        data.levelThreeDone = levelThreeDone;
+        data.levelFourDone = levelFourDone;
+        data.levelFiveDone = levelFiveDone;
        
         bf.Serialize(file, data);
         file.Close();
@@ -51,13 +55,17 @@ public class SaveSystem : MonoBehaviour
 
     public void LoadData()
     {
-        if (File.Exists(Application.persistentDataPath + "/gamedataa.dat"))
+        if (File.Exists(Application.persistentDataPath + "/gamedataaa.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/gamedataa.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/gamedataaa.dat", FileMode.Open);
             GameData data = (GameData)bf.Deserialize(file);
 
-            //continueGame = data.continueGame;
+            levelOneDone = data.levelOneDone;
+            levelTwoDone = data.levelTwoDone;
+            levelThreeDone = data.levelThreeDone;
+            levelFourDone = data.levelFourDone;
+            levelFiveDone = data.levelFiveDone;
 
         }
     }
@@ -67,6 +75,6 @@ public class SaveSystem : MonoBehaviour
 
 class GameData
 {
-    public bool continueGame;
+    public bool levelOneDone, levelTwoDone, levelThreeDone, levelFourDone, levelFiveDone;
 
 }

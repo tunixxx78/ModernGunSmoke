@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.051886797, b: 0.051886797, a: 0.56078434}
+  m_Color: {r: 0, g: 0.028357267, b: 1, a: 0.56078434}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -188,8 +188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -9}
-  m_SizeDelta: {x: 183, y: 187}
+  m_AnchoredPosition: {x: 0, y: 5}
+  m_SizeDelta: {x: 106, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8390268702800045956
 CanvasRenderer:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 614615039, guid: 855b54e4082368840a9b82340c715139, type: 3}
+  m_Sprite: {fileID: 925243481, guid: 855b54e4082368840a9b82340c715139, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 3559802174183406447}
   - component: {fileID: 5107131597457116706}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: AmmoBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

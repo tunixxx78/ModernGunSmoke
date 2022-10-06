@@ -9,7 +9,7 @@ public class PlrShoot : MonoBehaviour
     [SerializeField] Camera main;
     [SerializeField] float shootDelay = 1;
     public bool canShoot = true;
-    public int currentBullet = 0, ammoCount = 0;
+    public int currentBullet = 0, ammoCount = 5;
     public Vector3 direction;
     GameManager gameManager;
     SFXHandler sfxHandler;
@@ -18,6 +18,7 @@ public class PlrShoot : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         sfxHandler = FindObjectOfType<SFXHandler>();
+        gameManager.plrAmmoCount = ammoCount;
     }
 
     private void Update()
