@@ -15,6 +15,8 @@ public class PlrMovement : MonoBehaviour
     Animator plrAnimator;
     [SerializeField] GameObject plrAvatar;
 
+    SFXHandler sFXHandler;
+
 
     private void Awake()
     {
@@ -25,6 +27,8 @@ public class PlrMovement : MonoBehaviour
         gameManager.plrHealth = health;
 
         plrAnimator = GetComponentInChildren<Animator>();
+
+        sFXHandler = FindObjectOfType<SFXHandler>();
     }
 
     private void Start()
@@ -99,11 +103,13 @@ public class PlrMovement : MonoBehaviour
         if(collision.collider.tag == "EnemyBullet")
         {
             health--;
+            sFXHandler.getHit.Play();
             gameManager.plrHealth = health;
             if(health <= 0)
             {
                 gameManager.ShowGameOverPanel();
-                Destroy(this.gameObject);
+                sFXHandler.dying.Play();
+                Destroy(this.gameObject, 1f);
             }
             
         }
