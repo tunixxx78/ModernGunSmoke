@@ -19,10 +19,9 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-
+        
         SaveSystem.savingInstance.levelOneDone = true;
-        SaveSystem.savingInstance.SaveData();
-
+        
 
         if (SaveSystem.savingInstance.levelOneDone)
         {

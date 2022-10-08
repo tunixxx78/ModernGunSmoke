@@ -14,7 +14,7 @@ public class GameOverHandler : MonoBehaviour
     public void MoveToHighScoreScene()
     {
         Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     public void YouWon()

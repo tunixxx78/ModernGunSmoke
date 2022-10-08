@@ -11,6 +11,9 @@ public class SaveSystem : MonoBehaviour
     public static SaveSystem savingInstance;
 
     public bool levelOneDone, levelTwoDone, levelThreeDone, levelFourDone, levelFiveDone;
+    public int savedPoints;
+
+    public bool startWithLoad = false;
 
 
     private void Awake()
@@ -48,6 +51,8 @@ public class SaveSystem : MonoBehaviour
         data.levelThreeDone = levelThreeDone;
         data.levelFourDone = levelFourDone;
         data.levelFiveDone = levelFiveDone;
+
+        data.savedPoints = savedPoints;
        
         bf.Serialize(file, data);
         file.Close();
@@ -67,7 +72,22 @@ public class SaveSystem : MonoBehaviour
             levelFourDone = data.levelFourDone;
             levelFiveDone = data.levelFiveDone;
 
+            savedPoints = data.savedPoints;
+
         }
+    }
+
+    public void ResetData()
+    {
+        levelOneDone = false;
+        levelTwoDone = false;
+        levelThreeDone = false;
+        levelFourDone = false;
+        levelFiveDone = false;
+
+        PlayerPrefs.SetInt("PointsToNextLevel", 0);
+
+        
     }
 }
 
@@ -76,5 +96,6 @@ public class SaveSystem : MonoBehaviour
 class GameData
 {
     public bool levelOneDone, levelTwoDone, levelThreeDone, levelFourDone, levelFiveDone;
+    public int savedPoints;
 
 }

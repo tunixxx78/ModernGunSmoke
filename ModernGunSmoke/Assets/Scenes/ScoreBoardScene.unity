@@ -614,9 +614,57 @@ PrefabInstance:
       propertyPath: m_Name
       value: HighScoreCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976920, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976920, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1479276965, guid: 855b54e4082368840a9b82340c715139, type: 3}
+    - target: {fileID: 8558596698876976920, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8558596698876976922, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976923, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976923, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976923, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 883
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976923, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1251
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976923, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7577411
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976923, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7577411
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976923, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7577411
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976923, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 953
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558596698876976923, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 8558596698953140742, guid: 327ef50f343e14c08a55d6ec9de53e33, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4264138414869116085}
   - component: {fileID: 5671619449572264099}
+  - component: {fileID: 4819987850269497646}
   m_Layer: 0
   m_Name: SaveSystem
   m_TagString: Untagged
@@ -44,4 +45,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbe9506629ea40e7ad6b1a87862f841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continueGame: 0
+  levelOneDone: 0
+  levelTwoDone: 0
+  levelThreeDone: 0
+  levelFourDone: 0
+  levelFiveDone: 0
+  savedPoints: 0
+--- !u!114 &4819987850269497646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5812926248935520792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e098dd14ee274ed68aeb81544e7220e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

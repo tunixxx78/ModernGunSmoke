@@ -34,7 +34,7 @@ public class InputHandler : MonoBehaviour
 
         Scene scene = SceneManager.GetActiveScene();
 
-        if(scene.buildIndex == 3)
+        if(scene.buildIndex == 4)
         {
             testPoints = PlayerPrefs.GetInt("PLRPoints");
             playerScore = testPoints;

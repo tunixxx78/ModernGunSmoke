@@ -57,11 +57,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: rockb SDF
+  m_Name: rockbWithOutline
   m_EditorClassIdentifier: 
-  hashCode: -1679004986
+  hashCode: -243966027
   material: {fileID: 5195487126648717971}
-  materialHashCode: 1843197222
+  materialHashCode: -749269643
   m_Version: 1.1.0
   m_SourceFontFileGUID: c331e67f452a0401b92e4796bc647131
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: c331e67f452a0401b92e4796bc647131, type: 3}
@@ -2597,7 +2597,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.1
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333

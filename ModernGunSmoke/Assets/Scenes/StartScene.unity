@@ -2042,10 +2042,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 611718258}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1576222276}
+        m_TargetAssemblyTypeName: HowToStartGame, Assembly-CSharp
+        m_MethodName: StartLoadedGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2054,17 +2054,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 926376897}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1004309305}
+        m_TargetAssemblyTypeName: SceneChangeManager, Assembly-CSharp
+        m_MethodName: SceneChange
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1401537222
 MonoBehaviour:
@@ -2435,6 +2435,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544774727}
   m_CullTransparentMesh: 1
+--- !u!114 &1576222276 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4819987850269497646, guid: a106654193bcb4b54bb37b6beb0b945b, type: 3}
+  m_PrefabInstance: {fileID: 5322944341015166913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e098dd14ee274ed68aeb81544e7220e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1678274022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,6 +2782,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1576222276}
+        m_TargetAssemblyTypeName: HowToStartGame, Assembly-CSharp
+        m_MethodName: StartFreshGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1823173635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2970,7 +2993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Load
+  m_text: LoadGame
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 51939368cd7274fc592cc37a6b95d959, type: 2}
   m_sharedMaterial: {fileID: 5195487126648717971, guid: 51939368cd7274fc592cc37a6b95d959, type: 2}

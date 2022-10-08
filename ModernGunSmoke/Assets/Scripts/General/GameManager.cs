@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
 
         int bestScore = PlayerPrefs.GetInt("BestScore");
         highScoreText.text = bestScore.ToString();
+
+        plrPoints = PlayerPrefs.GetInt("PLRPoints");
     }
 
     private void Update()
