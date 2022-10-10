@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 5415064762317128317}
   - component: {fileID: 5415064762317128318}
   - component: {fileID: 5415064762317128319}
+  - component: {fileID: 8189768480818797722}
   m_Layer: 0
   m_Name: EnemyTwo
   m_TagString: Untagged
@@ -128,7 +129,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5415064762317128304}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.62
   m_Height: 2
@@ -165,6 +166,19 @@ MonoBehaviour:
   isAlive: 0
   canSeePlr: 0
   enemyAnimator: {fileID: 0}
+--- !u!65 &8189768480818797722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5415064762317128304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.09, z: 1}
+  m_Center: {x: 0, y: -1.02, z: 0}
 --- !u!1 &5415064762626143144
 GameObject:
   m_ObjectHideFlags: 0

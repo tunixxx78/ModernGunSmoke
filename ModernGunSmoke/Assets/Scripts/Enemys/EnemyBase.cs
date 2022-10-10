@@ -175,6 +175,45 @@ public class EnemyBase : MonoBehaviour
             
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PlrBullet"))
+        {
+            gameManager.plrPoints++;
+            enemyHealth--;
+            if (isThisBoss)
+            {
+                enemyHealthBar.SetHealth(enemyHealth);
+            }
+
+            if (enemyHealth > 0)
+            {
+                sFXHandler.getHit.Play();
+            }
+
+            if (enemyHealth <= 0)
+            {
+                isAlive = false;
+
+                GetComponent<Rigidbody>().isKinematic = true;
+
+                enemyAnimator.SetTrigger("Death");
+                sFXHandler.dying.Play();
+
+
+                Destroy(this.gameObject, 3f);
+
+                if (isThisBoss)
+                {
+                    gameManager.ShowYouWonPanel();
+
+                }
+            }
+        }
+    }
+
+
     public void getAnimatorActions()
     {
         enemyAnimator.SetTrigger("Jump");
