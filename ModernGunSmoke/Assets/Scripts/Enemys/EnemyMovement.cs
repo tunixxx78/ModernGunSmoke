@@ -13,18 +13,20 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float movementDelay, moveSpeed = 5;
     [SerializeField] Vector3 direction;
 
-    Animator enemyAnim;
+    [SerializeField] Animator enemyAnim;
 
 
     private void Awake()
     {
         enemyRigidbody = GetComponent<Rigidbody>();
         plr = GameObject.Find("Player");
-        enemyAnim = GetComponentInChildren<Animator>();
+        
     }
 
     private void Start()
     {
+        enemyAnim = GetComponentInChildren<Animator>();
+
         if (dummyMovementSelected)
         {
             methodToCall = DummyMovement;
@@ -46,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if(followerSelected && canMove)
         {
-            enemyRigidbody.AddForce(direction * moveSpeed * Time.deltaTime);
+            enemyRigidbody.AddForce(direction * 2.5f * Time.deltaTime);
         }
 
         if(dummyMovementSelected && canMove)
@@ -100,7 +102,9 @@ public class EnemyMovement : MonoBehaviour
 
         var plrPos = plr.transform.position;
         direction = plrPos - this.transform.position;
-        enemyRigidbody.AddForce(direction * moveSpeed * Time.deltaTime);
+
+        enemyAnim.SetBool("IsRunning", true);
+        enemyRigidbody.AddForce(direction * 1f * Time.deltaTime);
 
         StartCoroutine(MovementDelay());
         

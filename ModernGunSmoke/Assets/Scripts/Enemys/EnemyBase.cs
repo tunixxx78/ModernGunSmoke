@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
     public GameObject plr;
-    [SerializeField] int enemyHealth;
+    public int enemyHealth;
     [SerializeField] HealthBar enemyHealthBar;
     [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] GameObject enemyBulletPrefab;
@@ -33,7 +33,7 @@ public class EnemyBase : MonoBehaviour
             enemyHealthBar.SetMaxHealth(enemyHealth);
         }
 
-        enemyAnimator = GetComponentInChildren<Animator>();
+        
 
         isAlive = true;
 
@@ -43,6 +43,7 @@ public class EnemyBase : MonoBehaviour
 
     private void Start()
     {
+        enemyAnimator = GetComponentInChildren<Animator>();
         //GameObject enemyBulletInstance =  Instantiate(enemyBulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
         //Destroy(enemyBulletInstance, 10f);
 

@@ -92,6 +92,15 @@ public class PlrMovement : MonoBehaviour
             gameManager.plrAmmoCount = gameManager.plrAmmoCount + collider.GetComponent<AmmoCollectible>().AmmoAmount;
             GetComponent<PlrShoot>().ammoCount = GetComponent<PlrShoot>().ammoCount + collider.GetComponent<AmmoCollectible>().AmmoAmount;
             gameManager.plrAmmoBar.SetMaxAmmo(GetComponent<PlrShoot>().ammoCount);
+
+            Destroy(collider.gameObject);
+        }
+
+        if (collider.CompareTag("HealthCollectible"))
+        {
+            health++;
+            gameManager.plrHealth = health;
+            Destroy(collider.gameObject);
         }
     }
 
