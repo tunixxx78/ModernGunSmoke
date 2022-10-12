@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] int wantedAmountOfBloks, stopingDelay;
     PlrMovement plrMovement;
 
+    public bool bossIsDead = false;
+
     private void Awake()
     {
         plrMovement = FindObjectOfType<PlrMovement>();
@@ -78,6 +80,8 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(3);
         }
         */
+
+        
     }
 
 

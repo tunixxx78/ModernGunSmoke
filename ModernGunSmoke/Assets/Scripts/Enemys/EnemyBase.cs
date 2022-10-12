@@ -168,6 +168,7 @@ public class EnemyBase : MonoBehaviour
 
                 if (isThisBoss)
                 {
+                    gameManager.bossIsDead = true;
                     gameManager.ShowYouWonPanel();
 
                 }
