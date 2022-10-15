@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 
     [SerializeField] GameObject[] roadPrefab;
     [SerializeField] GameObject FinalRoadBlok, pausePanel, gameOverPanel, youWonPanel;
+    [SerializeField] Sprite[] bossImages;
+    [SerializeField] GameObject bossImageSpotWon, bossImageSpotLost;
     Transform sPPos;
     Vector3 sP = new Vector3(0, 0, 0);
     int spawnIndex = 0;
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
         highScoreText.text = bestScore.ToString();
 
         plrPoints = PlayerPrefs.GetInt("PLRPoints");
+
     }
 
     private void Update()
@@ -126,11 +130,20 @@ public class GameManager : MonoBehaviour
     public void ShowGameOverPanel()
     {
         gameOverPanel.SetActive(true);
+        Scene scene = SceneManager.GetActiveScene();
+        bossImageSpotLost.GetComponent<Image>().sprite = bossImages[scene.buildIndex - 2];
+
+        //bossImageSpotLost.GetComponent<Image>().
         PlayerPrefs.SetInt("PLRPoints", plrPoints);
     }
     public void ShowYouWonPanel()
     {
         youWonPanel.SetActive(true);
+
+        Scene scene = SceneManager.GetActiveScene();
+        bossImageSpotWon.GetComponent<Image>().sprite = bossImages[scene.buildIndex - 2];
+
+        //bossImageSpotWon = bossImages[scene.buildIndex + 1];
         PlayerPrefs.SetInt("PLRPoints", plrPoints);
 
     }
