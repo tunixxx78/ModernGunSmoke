@@ -76,6 +76,11 @@ public class PlrMovement : MonoBehaviour
             plrAnimator.SetTrigger("Jump");
         }
 
+        if (gameManager.bossIsDead)
+        {
+            GetComponent<CapsuleCollider>().enabled = false;
+        }
+
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -108,6 +113,19 @@ public class PlrMovement : MonoBehaviour
             gameManager.plrHealth = health;
             Destroy(collider.gameObject);
         }
+        if (collider.CompareTag("EnemyBullet"))
+        {
+            health--;
+            sFXHandler.getHit.Play();
+            gameManager.plrHealth = health;
+            if (health <= 0)
+            {
+                gameManager.ShowGameOverPanel();
+                sFXHandler.dying.Play();
+                Destroy(this.gameObject, 1f);
+            }
+
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -116,19 +134,7 @@ public class PlrMovement : MonoBehaviour
         {
             Debug.Log("Osuma moveriin!");
         }
-        if(collision.collider.tag == "EnemyBullet")
-        {
-            health--;
-            sFXHandler.getHit.Play();
-            gameManager.plrHealth = health;
-            if(health <= 0)
-            {
-                gameManager.ShowGameOverPanel();
-                sFXHandler.dying.Play();
-                Destroy(this.gameObject, 1f);
-            }
-            
-        }
+        
       
     }
 

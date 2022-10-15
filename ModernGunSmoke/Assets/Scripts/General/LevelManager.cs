@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] GameObject levelOne, levelTwo, lewvelThree, levelFour, levelFive;
-    [SerializeField] GameObject levelOneLock, levelTwoLock, lewvelThreeLock, levelFourLock, levelFiveLock;
+    [SerializeField] GameObject levelOne, levelTwo, levelThree, levelFour, levelFive;
+    [SerializeField] GameObject levelOneLock, levelTwoLock, levelThreeLock, levelFourLock, levelFiveLock;
 
     SaveSystem saveSystem;
 
@@ -32,6 +32,21 @@ public class LevelManager : MonoBehaviour
         {
             levelTwo.SetActive(true);
             levelTwoLock.SetActive(false);
+        }
+        if (SaveSystem.savingInstance.levelThreeDone)
+        {
+            levelThree.SetActive(true);
+            levelThreeLock.SetActive(false);
+        }
+        if (SaveSystem.savingInstance.levelFourDone)
+        {
+            levelFour.SetActive(true);
+            levelFourLock.SetActive(false);
+        }
+        if (SaveSystem.savingInstance.levelFiveDone)
+        {
+            levelFive.SetActive(true);
+            levelFiveLock.SetActive(false);
         }
     }
 }

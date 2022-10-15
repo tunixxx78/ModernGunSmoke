@@ -25,4 +25,12 @@ public class EnemyBullet : MonoBehaviour
     {
         bulletRb.AddForce(direction * bulletSpeed * Time.deltaTime, ForceMode.Impulse);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

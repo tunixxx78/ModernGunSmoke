@@ -627,6 +627,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1931337461}
     - target: {fileID: 4657709371864873993, guid: 1e17e450e774c49e4a663995e9afae5d, type: 3}
+      propertyPath: testPoints
+      value: 45000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657709371864873993, guid: 1e17e450e774c49e4a663995e9afae5d, type: 3}
       propertyPath: playerPoints
       value: 
       objectReference: {fileID: 501163938}

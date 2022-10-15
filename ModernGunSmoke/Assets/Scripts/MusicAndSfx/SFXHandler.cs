@@ -6,6 +6,10 @@ public class SFXHandler : MonoBehaviour
 {
     public AudioSource shotgun, dying, getHit, getHealth, getAmmo, enemyShot, explosion;
 
+    public void ButtonSound()
+    {
+        shotgun.Play();
+    }
     
     
 }

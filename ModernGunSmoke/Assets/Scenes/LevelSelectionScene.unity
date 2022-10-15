@@ -364,6 +364,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1326360742}
+        m_TargetAssemblyTypeName: SFXHandler, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &291924761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,6 +874,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1326360742}
+        m_TargetAssemblyTypeName: SFXHandler, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &593435659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,6 +1105,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1326360742}
+        m_TargetAssemblyTypeName: SFXHandler, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1475,6 +1511,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1326360742}
+        m_TargetAssemblyTypeName: SFXHandler, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1130242356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1832,6 +1880,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1326360742}
+        m_TargetAssemblyTypeName: SFXHandler, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1321349169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1927,6 +1987,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660efb1d46e8a469388e0b9ddcfabe22, type: 3}
+--- !u!114 &1326360742 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4281717180992189694, guid: 660efb1d46e8a469388e0b9ddcfabe22, type: 3}
+  m_PrefabInstance: {fileID: 1326360741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7e4414b19164c36be281658177dbcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1534658094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2634,12 +2705,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelOne: {fileID: 291924758}
   levelTwo: {fileID: 694986081}
-  lewvelThree: {fileID: 1130242353}
+  levelThree: {fileID: 1130242353}
   levelFour: {fileID: 593435656}
   levelFive: {fileID: 1321349166}
   levelOneLock: {fileID: 1875939269}
   levelTwoLock: {fileID: 584001459}
-  lewvelThreeLock: {fileID: 1220981828}
+  levelThreeLock: {fileID: 1220981828}
   levelFourLock: {fileID: 960834108}
   levelFiveLock: {fileID: 1024912442}
 --- !u!4 &2121909443

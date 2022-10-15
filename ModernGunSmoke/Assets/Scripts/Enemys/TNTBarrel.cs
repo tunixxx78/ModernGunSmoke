@@ -25,6 +25,18 @@ public class TNTBarrel : MonoBehaviour
 
             Destroy(this.gameObject, 1.5f);
         }
+
+        if (other.CompareTag("PlrBullet"))
+        {
+            sFXHandler.explosion.Play();
+            GetComponent<Rigidbody>().Sleep();
+            explotionEffect.SetActive(true);
+            GetComponentInParent<MeshRenderer>().enabled = false;
+
+            GetComponentInChildren<SphereCollider>().radius = 4;
+
+            Destroy(this.gameObject, 1.5f);
+        }
     }
     
     private void OnCollisionEnter(Collision collision)

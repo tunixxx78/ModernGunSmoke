@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3806537523252856309}
   - component: {fileID: 3806537523252856298}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: KillZone
   m_TagString: KillZone
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3806537523479552150}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: TNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3806537523917779878}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: ExplotionEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 587925456397838575, guid: a421b28693769ba4087d873ed651bc05, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 966235730898874899, guid: a421b28693769ba4087d873ed651bc05, type: 3}
       propertyPath: looping
@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1129336880906117703, guid: a421b28693769ba4087d873ed651bc05, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1129336880906117703, guid: a421b28693769ba4087d873ed651bc05, type: 3}
       propertyPath: m_IsActive
@@ -182,23 +182,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6290306149086214581, guid: a421b28693769ba4087d873ed651bc05, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6290327505731082399, guid: a421b28693769ba4087d873ed651bc05, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6290672412719656509, guid: a421b28693769ba4087d873ed651bc05, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6290979963887879997, guid: a421b28693769ba4087d873ed651bc05, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6291208109820457939, guid: a421b28693769ba4087d873ed651bc05, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a421b28693769ba4087d873ed651bc05, type: 3}
@@ -225,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1996911910993298, guid: 90bf11465095b134782cb56dc251a6cd, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4531404097422098, guid: 90bf11465095b134782cb56dc251a6cd, type: 3}
       propertyPath: m_RootOrder

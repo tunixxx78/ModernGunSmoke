@@ -215,8 +215,10 @@ public class EnemyBase : MonoBehaviour
                 {
                     Scene scene = SceneManager.GetActiveScene();
 
-                    gameManager.ShowYouWonPanel();
+                    gameManager.bossIsDead = true;
                     gameManager.plrPoints += gameManager.pointsFromBoss[scene.buildIndex - 2];
+                    gameManager.ShowYouWonPanel();
+                    
 
                 }
             }

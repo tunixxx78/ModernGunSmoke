@@ -25,7 +25,8 @@ public class SaveSystem : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         if (scene.buildIndex == 0)
         {
-            PlayerPrefs.SetInt("PointsToNextLevel", 0);
+            //PlayerPrefs.SetInt("PointsToNextLevel", 0);
+            //PlayerPrefs.SetInt("PLRPoints", 0);
         }
 
 
@@ -38,12 +39,13 @@ public class SaveSystem : MonoBehaviour
 
         savingInstance = this;
         DontDestroyOnLoad(this);
+
     }
 
     public void SaveData()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/gamedataaa.dat");
+        FileStream file = File.Create(Application.persistentDataPath + "/savedata.dat");
         GameData data = new GameData();
 
         data.levelOneDone = levelOneDone;
@@ -52,6 +54,7 @@ public class SaveSystem : MonoBehaviour
         data.levelFourDone = levelFourDone;
         data.levelFiveDone = levelFiveDone;
 
+        savedPoints = PlayerPrefs.GetInt("PLRPoints");
         data.savedPoints = savedPoints;
        
         bf.Serialize(file, data);
@@ -60,10 +63,10 @@ public class SaveSystem : MonoBehaviour
 
     public void LoadData()
     {
-        if (File.Exists(Application.persistentDataPath + "/gamedataaa.dat"))
+        if (File.Exists(Application.persistentDataPath + "/savedata.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/gamedataaa.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/savedata.dat", FileMode.Open);
             GameData data = (GameData)bf.Deserialize(file);
 
             levelOneDone = data.levelOneDone;
@@ -73,6 +76,8 @@ public class SaveSystem : MonoBehaviour
             levelFiveDone = data.levelFiveDone;
 
             savedPoints = data.savedPoints;
+
+            PlayerPrefs.SetInt("PLRPoints", savedPoints);
 
         }
     }
@@ -85,10 +90,11 @@ public class SaveSystem : MonoBehaviour
         levelFourDone = false;
         levelFiveDone = false;
 
-        PlayerPrefs.SetInt("PointsToNextLevel", 0);
+        PlayerPrefs.SetInt("PLRPoints", 0);
 
         
     }
+
 }
 
 [Serializable]

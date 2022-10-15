@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1419935225951976601}
   - component: {fileID: 1419935225951976598}
   - component: {fileID: 1419935225951976599}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: HealthCollectible
   m_TagString: HealthCollectible
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1c0c7ebc9c0c56a469847bb3acc4aa98, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c0c7ebc9c0c56a469847bb3acc4aa98, type: 3}

@@ -146,6 +146,34 @@ public class GameManager : MonoBehaviour
 
         //bossImageSpotWon = bossImages[scene.buildIndex + 1];
         PlayerPrefs.SetInt("PLRPoints", plrPoints);
+        
+
+    }
+
+    public void SaveCurrentProgress()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+
+        if(scene.buildIndex == 2)
+        {
+            SaveSystem.savingInstance.levelTwoDone = true;
+            SaveSystem.savingInstance.SaveData();
+        }
+        if (scene.buildIndex == 3)
+        {
+            SaveSystem.savingInstance.levelThreeDone = true;
+            SaveSystem.savingInstance.SaveData();
+        }
+        if (scene.buildIndex == 4)
+        {
+            SaveSystem.savingInstance.levelFourDone = true;
+            SaveSystem.savingInstance.SaveData();
+        }
+        if (scene.buildIndex == 5)
+        {
+            SaveSystem.savingInstance.levelFiveDone = true;
+            SaveSystem.savingInstance.SaveData();
+        }
 
     }
 }

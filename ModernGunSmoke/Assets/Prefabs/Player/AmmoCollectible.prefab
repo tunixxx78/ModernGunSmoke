@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9060646517722462756}
   - component: {fileID: 9032470315931949146}
   - component: {fileID: 9032470315931949147}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: AmmoCollectible
   m_TagString: AmmoCollectible
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8f29e24ca10121741a0b8162ae5f5fe3, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f29e24ca10121741a0b8162ae5f5fe3, type: 3}
