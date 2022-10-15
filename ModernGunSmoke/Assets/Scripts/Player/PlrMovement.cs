@@ -89,6 +89,9 @@ public class PlrMovement : MonoBehaviour
         }
         if (collider.CompareTag("AmmoCollectible"))
         {
+            gameManager.plrPoints += 100;
+
+            sFXHandler.getAmmo.Play();
             gameManager.plrAmmoCount = gameManager.plrAmmoCount + collider.GetComponent<AmmoCollectible>().AmmoAmount;
             GetComponent<PlrShoot>().ammoCount = GetComponent<PlrShoot>().ammoCount + collider.GetComponent<AmmoCollectible>().AmmoAmount;
             gameManager.plrAmmoBar.SetMaxAmmo(GetComponent<PlrShoot>().ammoCount);
@@ -98,6 +101,9 @@ public class PlrMovement : MonoBehaviour
 
         if (collider.CompareTag("HealthCollectible"))
         {
+            gameManager.plrPoints += 400;
+
+            sFXHandler.getHealth.Play();
             health++;
             gameManager.plrHealth = health;
             Destroy(collider.gameObject);

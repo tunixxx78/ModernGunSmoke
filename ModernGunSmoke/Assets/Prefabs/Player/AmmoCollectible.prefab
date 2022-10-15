@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9060646517722462756}
   - component: {fileID: 9032470315931949146}
   - component: {fileID: 9032470315931949147}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: AmmoCollectible
   m_TagString: AmmoCollectible
   m_Icon: {fileID: 0}
@@ -215,8 +215,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8f29e24ca10121741a0b8162ae5f5fe3, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f29e24ca10121741a0b8162ae5f5fe3, type: 3}
+--- !u!1 &8177564753685878448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f29e24ca10121741a0b8162ae5f5fe3, type: 3}
+  m_PrefabInstance: {fileID: 9060646519182371809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1568269419868371000
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177564753685878448}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c520738eb79241389c8f7d8d4735f50, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &8806608191015341066 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8f29e24ca10121741a0b8162ae5f5fe3, type: 3}

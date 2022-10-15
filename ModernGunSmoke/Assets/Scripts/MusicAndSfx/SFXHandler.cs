@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SFXHandler : MonoBehaviour
 {
-    public AudioSource shotgun, dying, getHit;
+    public AudioSource shotgun, dying, getHit, getHealth, getAmmo, enemyShot, explosion;
 
     
     

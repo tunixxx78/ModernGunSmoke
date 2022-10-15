@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyBase : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] LayerMask obstacle;
     [SerializeField]bool canShoot = true, isThisBoss, isAlive;
     public bool canSeePlr;
+
+    [SerializeField] GameObject flashEffect;
 
 
     GameManager gameManager;
@@ -112,7 +115,10 @@ public class EnemyBase : MonoBehaviour
                     if (canShoot && isAlive)
                     {
                         canSeePlr = true;
+                        sFXHandler.enemyShot.Play();
                         GameObject enemyBulletInstance = Instantiate(enemyBulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+                        var flashInstance = Instantiate(flashEffect, bulletSpawnPoint.position, Quaternion.identity);
+                        Destroy(flashInstance, 1f);
                         Destroy(enemyBulletInstance, 3f);
 
                         canShoot = false;
@@ -137,7 +143,7 @@ public class EnemyBase : MonoBehaviour
             canSeePlr = false;
         }
     }
-
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "PlrBullet")
@@ -176,10 +182,10 @@ public class EnemyBase : MonoBehaviour
             
         }
     }
-
+    */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PlrBullet"))
+        if (other.CompareTag("PlrBullet") || other.CompareTag("KillZone"))
         {
             gameManager.plrPoints++;
             enemyHealth--;
@@ -207,11 +213,15 @@ public class EnemyBase : MonoBehaviour
 
                 if (isThisBoss)
                 {
+                    Scene scene = SceneManager.GetActiveScene();
+
                     gameManager.ShowYouWonPanel();
+                    gameManager.plrPoints += gameManager.pointsFromBoss[scene.buildIndex - 2];
 
                 }
             }
         }
+        
     }
 
 

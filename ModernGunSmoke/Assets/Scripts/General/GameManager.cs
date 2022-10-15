@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] roadPrefab;
     [SerializeField] GameObject FinalRoadBlok, pausePanel, gameOverPanel, youWonPanel;
     [SerializeField] Sprite[] bossImages;
+    public int[] pointsFromBoss;
     [SerializeField] GameObject bossImageSpotWon, bossImageSpotLost;
     Transform sPPos;
     Vector3 sP = new Vector3(0, 0, 0);

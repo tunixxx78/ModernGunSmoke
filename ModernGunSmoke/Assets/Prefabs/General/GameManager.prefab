@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3015944221836409473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3015944221836409475}
+  - component: {fileID: 3015944221836409472}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3015944221836409475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3015944221836409473}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.348755, y: 2.9658375, z: 18.424849}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3015944221836409472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3015944221836409473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab02b70c071c74046bd59c7a6fea5b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadPrefab:
+  - {fileID: 5078876461544549156, guid: 05ebea432cace4ecf913cd2153da7704, type: 3}
+  FinalRoadBlok: {fileID: 1011425463949490721, guid: 6a6fe18758e304d42bab02fb0c9a633a, type: 3}
+  pausePanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  youWonPanel: {fileID: 0}
+  bossImages:
+  - {fileID: 21300000, guid: b666bcc0289414f5e8fe28ecf0bc1145, type: 3}
+  - {fileID: 21300000, guid: 34de625ee5d0e47a88d14efa772740d0, type: 3}
+  - {fileID: 21300000, guid: 473463295beec4a1a8fc93399740f7d0, type: 3}
+  pointsFromBoss: 10270000204e0000409c0000f8240100a0860100
+  bossImageSpotWon: {fileID: 0}
+  bossImageSpotLost: {fileID: 0}
+  enemyPrefab: {fileID: 5415064762317128304, guid: 9d3a367d5de1f4ae7b59e0b0c0336820, type: 3}
+  plrPoints: 0
+  plrHealth: 0
+  plrAmmoCount: 5
+  currentHighScore: 0
+  playerPointsText: {fileID: 0}
+  highScoreText: {fileID: 0}
+  playerHealthText: {fileID: 0}
+  ammoCountText: {fileID: 0}
+  roadBlocks: []
+  spawnPositions:
+  - {x: 7.9063934e-36, y: 4.5898e-41, z: 200}
+  plrHealthBar: {fileID: 0}
+  plrAmmoBar: {fileID: 0}
+  forcingMovement: 0
+  wantedAmountOfBloks: 1
+  stopingDelay: 100
+  bossIsDead: 0

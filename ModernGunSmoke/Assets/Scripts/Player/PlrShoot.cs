@@ -14,6 +14,9 @@ public class PlrShoot : MonoBehaviour
     GameManager gameManager;
     SFXHandler sfxHandler;
 
+    [SerializeField] GameObject flashEffect;
+    [SerializeField] float shootingRange;
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -62,8 +65,10 @@ public class PlrShoot : MonoBehaviour
     public void Shoot()
     {    
         var BulletInstance = Instantiate(bullets[currentBullet], bulletSpawnPoint.position, Quaternion.identity);
+        var flashInstance = Instantiate(flashEffect, bulletSpawnPoint.position, Quaternion.identity);
 
-        Destroy(BulletInstance, 5f);
+        Destroy(BulletInstance, shootingRange);
+        Destroy(flashInstance, 1f);
     }
 
     IEnumerator ShootDelay()
