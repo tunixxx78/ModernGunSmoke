@@ -4255,7 +4255,7 @@ PrefabInstance:
     - target: {fileID: 1903312525174052495, guid: 074f9dff99060461fb1a1383ed5415f7, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 5e43b7fdf134a4c63bb1661f16bd8af7, type: 3}
+      objectReference: {fileID: 8300000, guid: 703c1d0a2825b4412a0343d817c2d6c2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 074f9dff99060461fb1a1383ed5415f7, type: 3}
 --- !u!1001 &1002884372
@@ -10441,6 +10441,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1142533992}
     - target: {fileID: 3015944221836409472, guid: 962722bec585d4ed8a7b3adc24ebedee, type: 3}
+      propertyPath: wantedAmountOfBloks
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015944221836409472, guid: 962722bec585d4ed8a7b3adc24ebedee, type: 3}
+      propertyPath: roadPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015944221836409472, guid: 962722bec585d4ed8a7b3adc24ebedee, type: 3}
       propertyPath: bossImages.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: 473463295beec4a1a8fc93399740f7d0, type: 3}
@@ -10448,6 +10456,14 @@ PrefabInstance:
       propertyPath: bossImages.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: 34de625ee5d0e47a88d14efa772740d0, type: 3}
+    - target: {fileID: 3015944221836409472, guid: 962722bec585d4ed8a7b3adc24ebedee, type: 3}
+      propertyPath: roadPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 2336870034461834350, guid: 1eda5c0b298014da7a9ea45a7d769b19, type: 3}
+    - target: {fileID: 3015944221836409472, guid: 962722bec585d4ed8a7b3adc24ebedee, type: 3}
+      propertyPath: roadPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 2336870034461834350, guid: 1eda5c0b298014da7a9ea45a7d769b19, type: 3}
     - target: {fileID: 3015944221836409473, guid: 962722bec585d4ed8a7b3adc24ebedee, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -10707,6 +10723,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 896201080794185228, guid: 05ebea432cace4ecf913cd2153da7704, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 995492261070178539, guid: 05ebea432cace4ecf913cd2153da7704, type: 3}
       propertyPath: m_Size.z
       value: 0

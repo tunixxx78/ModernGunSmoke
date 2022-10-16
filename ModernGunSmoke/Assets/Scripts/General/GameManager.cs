@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public int[] pointsFromBoss;
     [SerializeField] GameObject bossImageSpotWon, bossImageSpotLost;
     Transform sPPos;
-    Vector3 sP = new Vector3(0, 0, 0);
+    public Vector3 sP = new Vector3(0, 0, 0);
     int spawnIndex = 0;
 
     [SerializeField] GameObject enemyPrefab;
@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
         highScoreText.text = bestScore.ToString();
 
         plrPoints = PlayerPrefs.GetInt("PLRPoints");
+
+        sP.z = spawnPositions[spawnIndex].z;
 
     }
 
@@ -98,16 +100,19 @@ public class GameManager : MonoBehaviour
         {
             var roadInstance = Instantiate(FinalRoadBlok, spawnPositions[spawnIndex], Quaternion.identity);
             roadBlocks.Add(roadInstance);
-            sP = new Vector3(sP.x, sP.y, sP.z + 200);
+            sP = new Vector3(sP.x, sP.y, (sP.z + 200));
         }
         else
         {
             var roadInstance = Instantiate(roadPrefab[randomRoadBlock], spawnPositions[spawnIndex], Quaternion.identity);
             roadBlocks.Add(roadInstance);
-            sP = new Vector3(sP.x, sP.y, sP.z + 200);
+            sP.z = sP.z + 200;
+            sP = new Vector3(sP.x, sP.y, sP.z);
+            
         }
-
         
+
+
 
         spawnPositions.Add(sP);
 
