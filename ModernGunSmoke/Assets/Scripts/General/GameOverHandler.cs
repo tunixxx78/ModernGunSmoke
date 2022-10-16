@@ -24,7 +24,6 @@ public class GameOverHandler : MonoBehaviour
     public void TryAgain()
     {
         Scene scene = SceneManager.GetActiveScene();
-        //SceneManager.LoadScene(scene.buildIndex);
 
         StartCoroutine(SceneChangeDelay(2f, scene.buildIndex));
         StartCoroutine(FadeMusicOff());
@@ -33,16 +32,14 @@ public class GameOverHandler : MonoBehaviour
     public void MoveToHighScoreScene()
     {
         Scene scene = SceneManager.GetActiveScene();
-        //SceneManager.LoadScene(4);
 
-        StartCoroutine(SceneChangeDelay(2f, 4));
+        StartCoroutine(SceneChangeDelay(2f, 6));
         StartCoroutine(FadeMusicOff());
     }
 
     public void YouWon()
     {
         Scene scene = SceneManager.GetActiveScene();
-        //SceneManager.LoadScene(scene.buildIndex + 1);
 
         StartCoroutine(SceneChangeDelay(2f, scene.buildIndex + 1));
         StartCoroutine(FadeMusicOff());

@@ -65,15 +65,4 @@ public class HighscoreHandler : MonoBehaviour
         }
     }
 
-    //exiting back to main menu(temporary function)
-
-    /*
-    public void BackToMainMenu()
-    {
-        PlayerPrefs.SetInt("PointsToNextLevel", 0);
-        SceneManager.LoadScene(0);
-        SaveSystem.savingInstance.continueGame = false;
-        SaveSystem.savingInstance.SaveData();
-    }
-    */
 }
