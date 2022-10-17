@@ -24,6 +24,7 @@ public class EnemyBase : MonoBehaviour
     GameManager gameManager;
 
     public Animator enemyAnimator;
+    Rigidbody enemyRB;
 
     SFXHandler sFXHandler;
 
@@ -41,17 +42,16 @@ public class EnemyBase : MonoBehaviour
         isAlive = true;
 
         sFXHandler = FindObjectOfType<SFXHandler>();
+
+        enemyRB = GetComponent<Rigidbody>();
         
     }
 
     private void Start()
     {
         enemyAnimator = GetComponentInChildren<Animator>();
-        //GameObject enemyBulletInstance =  Instantiate(enemyBulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-        //Destroy(enemyBulletInstance, 10f);
 
         StartCoroutine(FOVRoutine());
-        //StartCoroutine(ShootingDelay());
         
     }
 
@@ -143,46 +143,7 @@ public class EnemyBase : MonoBehaviour
             canSeePlr = false;
         }
     }
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.collider.tag == "PlrBullet")
-        {
-            gameManager.plrPoints++;
-            enemyHealth--;
-            if (isThisBoss)
-            {
-                enemyHealthBar.SetHealth(enemyHealth);
-            }
 
-            if(enemyHealth > 0)
-            {
-                sFXHandler.getHit.Play();
-            }
-            
-            if (enemyHealth <= 0)
-            {
-                isAlive = false;
-
-                GetComponent<Rigidbody>().isKinematic = true;
-
-                enemyAnimator.SetTrigger("Death");
-                sFXHandler.dying.Play();
-                
-
-                Destroy(this.gameObject, 3f);
-
-                if (isThisBoss)
-                {
-                    gameManager.bossIsDead = true;
-                    gameManager.ShowYouWonPanel();
-
-                }
-            }
-            
-        }
-    }
-    */
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PlrBullet") || other.CompareTag("KillZone"))
@@ -199,11 +160,13 @@ public class EnemyBase : MonoBehaviour
                 sFXHandler.getHit.Play();
             }
 
-            if (enemyHealth <= 0)
+            if (enemyHealth <= 0 && isAlive)
             {
                 isAlive = false;
 
+               
                 GetComponent<Rigidbody>().isKinematic = true;
+                
 
                 enemyAnimator.SetTrigger("Death");
                 sFXHandler.dying.Play();
@@ -216,7 +179,7 @@ public class EnemyBase : MonoBehaviour
                     Scene scene = SceneManager.GetActiveScene();
 
                     gameManager.bossIsDead = true;
-                    gameManager.plrPoints += gameManager.pointsFromBoss[scene.buildIndex - 2];
+                    gameManager.plrPoints = gameManager.plrPoints + gameManager.pointsFromBoss[scene.buildIndex - 2];
                     gameManager.ShowYouWonPanel();
                     
 

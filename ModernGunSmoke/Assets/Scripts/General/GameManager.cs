@@ -78,16 +78,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        //ONLY FOR DEV USE!
-        /*
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            PlayerPrefs.SetInt("PLRPoints", plrPoints);
-
-            SceneManager.LoadScene(3);
-        }
-        */
-
         
     }
 

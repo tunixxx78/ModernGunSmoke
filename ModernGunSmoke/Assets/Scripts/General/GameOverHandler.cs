@@ -33,7 +33,7 @@ public class GameOverHandler : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
 
-        StartCoroutine(SceneChangeDelay(2f, 6));
+        StartCoroutine(SceneChangeDelay(2f, 7));
         StartCoroutine(FadeMusicOff());
     }
 

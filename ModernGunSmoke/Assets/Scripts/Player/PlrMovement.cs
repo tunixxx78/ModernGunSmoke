@@ -46,6 +46,7 @@ public class PlrMovement : MonoBehaviour
         else
         {
             plrAnimator.SetBool("IsRunning", false);
+           
         }
         
 
@@ -70,12 +71,12 @@ public class PlrMovement : MonoBehaviour
             plrAvatar.transform.localRotation = Quaternion.Euler(0, 50, 0);
         }
         else { plrAvatar.transform.localRotation = Quaternion.Euler(0, 15, 0); }
-
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
             plrAnimator.SetTrigger("Jump");
         }
-
+        */
         if (gameManager.bossIsDead)
         {
             GetComponent<CapsuleCollider>().enabled = false;
