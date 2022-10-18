@@ -11,6 +11,7 @@ TagManager:
   - AmmoCollectible
   - HealthCollectible
   - KillZone
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - Enviroment
   - Buildings
   - UI1
-  - 
+  - plrObs
   - 
   - 
   - 

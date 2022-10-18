@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] roadPrefab;
     [SerializeField] GameObject FinalRoadBlok, pausePanel, gameOverPanel, youWonPanel;
     [SerializeField] Sprite[] bossImages;
+    [SerializeField] string[] bossNames;
     public int[] pointsFromBoss;
     [SerializeField] GameObject bossImageSpotWon, bossImageSpotLost;
+    [SerializeField] TMP_Text bossNameWon, bossNameLost, rewardAmount;
     Transform sPPos;
     public Vector3 sP = new Vector3(0, 0, 0);
     int spawnIndex = 0;
@@ -128,8 +130,8 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(true);
         Scene scene = SceneManager.GetActiveScene();
         bossImageSpotLost.GetComponent<Image>().sprite = bossImages[scene.buildIndex - 2];
+        bossNameLost.text = bossNames[scene.buildIndex - 2];
 
-        //bossImageSpotLost.GetComponent<Image>().
         PlayerPrefs.SetInt("PLRPoints", plrPoints);
     }
     public void ShowYouWonPanel()
@@ -138,8 +140,9 @@ public class GameManager : MonoBehaviour
 
         Scene scene = SceneManager.GetActiveScene();
         bossImageSpotWon.GetComponent<Image>().sprite = bossImages[scene.buildIndex - 2];
+        bossNameWon.text = bossNames[scene.buildIndex - 2];
+        rewardAmount.text = pointsFromBoss[scene.buildIndex - 2].ToString();
 
-        //bossImageSpotWon = bossImages[scene.buildIndex + 1];
         PlayerPrefs.SetInt("PLRPoints", plrPoints);
         
 

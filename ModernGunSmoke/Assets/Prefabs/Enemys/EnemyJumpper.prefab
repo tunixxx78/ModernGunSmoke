@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 7781281891363905842}
   m_Layer: 10
   m_Name: EnemyJumpper
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

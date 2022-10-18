@@ -19,7 +19,7 @@ public class BulletMovement : MonoBehaviour
         this.bulletRb.AddForce(plrShoot.direction.normalized * bulletSpeed * Time.deltaTime, ForceMode.Impulse);
     }
 
-    /*
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -27,5 +27,5 @@ public class BulletMovement : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    */
+    
 }

@@ -32,10 +32,7 @@ public class EnemyBase : MonoBehaviour
     {
         plr = GameObject.Find("Player");
         gameManager = FindObjectOfType<GameManager>();
-        if (isThisBoss)
-        {
-            enemyHealthBar.SetMaxHealth(enemyHealth);
-        }
+        
 
         
 
@@ -49,6 +46,11 @@ public class EnemyBase : MonoBehaviour
 
     private void Start()
     {
+        if (isThisBoss)
+        {
+            enemyHealthBar.SetMaxHealth(enemyHealth);
+        }
+
         enemyAnimator = GetComponentInChildren<Animator>();
 
         StartCoroutine(FOVRoutine());

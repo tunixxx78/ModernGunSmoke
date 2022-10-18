@@ -56,9 +56,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 673a2a360293e43c6ac6c88e1a30ca05, type: 3}
   - {fileID: 21300000, guid: fd09bbf1f72934ce889112747cb172c5, type: 3}
   - {fileID: 21300000, guid: 34de625ee5d0e47a88d14efa772740d0, type: 3}
+  bossNames:
+  - Mr. Badguy
+  - "Sen\xF5r Death"
+  - Flying Bullet
+  - Big Bear
+  - Lt. Slaughter
   pointsFromBoss: 10270000204e0000409c0000f8240100a0860100
   bossImageSpotWon: {fileID: 0}
   bossImageSpotLost: {fileID: 0}
+  bossNameWon: {fileID: 0}
+  bossNameLost: {fileID: 0}
+  rewardAmount: {fileID: 0}
   sP: {x: 0, y: 0, z: 0}
   enemyPrefab: {fileID: 5415064762317128304, guid: 9d3a367d5de1f4ae7b59e0b0c0336820, type: 3}
   plrPoints: 0
