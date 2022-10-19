@@ -10,7 +10,7 @@ public class SaveSystem : MonoBehaviour
 {
     public static SaveSystem savingInstance;
 
-    public bool levelOneDone, levelTwoDone, levelThreeDone, levelFourDone, levelFiveDone;
+    public bool levelOneDone, levelTwoDone, levelThreeDone, levelFourDone, levelFiveDone, firstTimeToStartGame = false;
     public int savedPoints;
 
     public bool startWithLoad = false;
@@ -54,6 +54,8 @@ public class SaveSystem : MonoBehaviour
         data.levelFourDone = levelFourDone;
         data.levelFiveDone = levelFiveDone;
 
+        data.firstTimeToStartGame = firstTimeToStartGame;
+
         savedPoints = PlayerPrefs.GetInt("PLRPoints");
         data.savedPoints = savedPoints;
        
@@ -75,6 +77,8 @@ public class SaveSystem : MonoBehaviour
             levelFourDone = data.levelFourDone;
             levelFiveDone = data.levelFiveDone;
 
+            firstTimeToStartGame = data.firstTimeToStartGame;
+
             savedPoints = data.savedPoints;
 
             PlayerPrefs.SetInt("PLRPoints", savedPoints);
@@ -92,6 +96,8 @@ public class SaveSystem : MonoBehaviour
 
         PlayerPrefs.SetInt("PLRPoints", 0);
 
+        SaveData();
+
         
     }
 
@@ -101,7 +107,7 @@ public class SaveSystem : MonoBehaviour
 
 class GameData
 {
-    public bool levelOneDone, levelTwoDone, levelThreeDone, levelFourDone, levelFiveDone;
+    public bool levelOneDone, levelTwoDone, levelThreeDone, levelFourDone, levelFiveDone, firstTimeToStartGame;
     public int savedPoints;
 
 }

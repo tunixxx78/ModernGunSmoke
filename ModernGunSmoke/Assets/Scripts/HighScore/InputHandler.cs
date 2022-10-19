@@ -19,14 +19,18 @@ public class InputHandler : MonoBehaviour
 
     private void Awake()
     {
-        /*
-        if (SaveSystem.savingInstance.notFirstTimeToStart == false)
+        
+        if (SaveSystem.savingInstance.firstTimeToStartGame == false)
         {
-            highscoreHandler.AddHighscoreIfPossible(new HighscoreElement("DevTeam", 215000));
-            SaveSystem.savingInstance.notFirstTimeToStart = true;
+            highscoreHandler.AddHighscoreIfPossible(new HighscoreElement("GAME MONSTER", 250000));
+            highscoreHandler.AddHighscoreIfPossible(new HighscoreElement("Gun Slinger", 185450));
+            highscoreHandler.AddHighscoreIfPossible(new HighscoreElement("Mr.Badguy", 120650));
+            highscoreHandler.AddHighscoreIfPossible(new HighscoreElement("Cowboy", 95450));
+            highscoreHandler.AddHighscoreIfPossible(new HighscoreElement("Rookie", 2500));
+            SaveSystem.savingInstance.firstTimeToStartGame = true;
             SaveSystem.savingInstance.SaveData();
         }
-        */
+        
 
         //Take this off!!! ONLY For dev use
 

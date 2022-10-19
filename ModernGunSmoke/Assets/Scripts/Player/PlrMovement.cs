@@ -110,7 +110,15 @@ public class PlrMovement : MonoBehaviour
             gameManager.plrPoints += 400;
 
             sFXHandler.getHealth.Play();
-            health++;
+            if(health < 10)
+            {
+                health++;
+            }
+            else
+            {
+                health = 10;
+            }
+            
             gameManager.plrHealth = health;
             Destroy(collider.gameObject);
         }

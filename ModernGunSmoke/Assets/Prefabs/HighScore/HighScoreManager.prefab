@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCount: 6
-  fileName: TextHighscore.json
+  fileName: testScoreRun.json
 --- !u!114 &4657709371864873994
 MonoBehaviour:
   m_ObjectHideFlags: 0
